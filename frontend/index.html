@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1 id="accountLabel"></h1>
+    <button id="connectionButton">connect</button>
+    
+    <div hidden id="dapp">
+        <button id="getPostBtn">show all</button>
+        <button id="myPostsBtn">my posts</button>
+        <br><br>
+        <textarea id="postInput"></textarea>
+        <button id="makePostBtn">post</button>
+        <button id="clearPostBtn">clear all</button>
+
+        <hr>
+        <div id="posts"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@4.16.0/dist/web3.min.js"></script>
+    <script src="./contract_abi.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
