@@ -52,12 +52,14 @@ const drawPosts = async () => {
         div.style.margin = "10px 0";
         div.style.padding = "10px";
 
-        div.innerHTML =
-            '<p><b>' + post.author + '</b></p>' +
-            '<p>' + post.message + '</p>' +
-            '<button onclick="like(' + post.id + ')">Like: ' + post.likes + '</button>' +
-            (post.author() === current_account()
-                ? '<button onclick="del(' + post.id + ')">Delete</button>' : "");
+        const isAuthor = post.author() === current_account();
+
+        div.innerHTML = [
+            '<p><b>' + post.author + '</b></p>',
+            '<p>' + post.message + '</p>',
+            '<button onclick="like(' + post.id + ')">Like: ' + post.likes + '</button>',
+            isAuthor ? '<button onclick="del(' + post.id + ')">Delete</button>' : ""
+        ];
         container.appendChild(div);
     });
 }
